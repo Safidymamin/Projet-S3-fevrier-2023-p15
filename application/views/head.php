@@ -138,7 +138,7 @@
                 <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>ETU002003 </strong>Safidy Maminirina</p>
                 <p class="text-center mb-2"><strong>ETU002033 </strong>Anthony Randriarimalala</p>
-                <p class="text-center mb-2"><strong>ETU002037 </strong>Safidy Bototota</p>
+                <p class="text-center mb-2"><strong>ETU002037 /strong>Safidy Bototota</p>
             </div>
 
         </ul>

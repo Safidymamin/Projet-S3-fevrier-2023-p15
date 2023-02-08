@@ -232,6 +232,11 @@
                                           majority have suffered alteration in some form, by injected humour, or
                                           randomised words which don't look even slightly believable.
                                         </p>
+                                        <br/>
+                                        <p>
+                                             <a href="<?php echo base_url('user/pourcentage'); ?>?pourcentage=<?php echo 10 ?>&min=<?php echo $data->prix-($data->prix*0.1); ?>&max=<?php echo $data->prix+($data->prix*0.1); ?>">+/-10%</a>
+                                             <a href="<?php echo base_url('user/pourcentage'); ?>?pourcentage=<?php echo 20 ?>&min=<?php echo $data->prix-($data->prix*0.2); ?>&max=<?php echo $data->prix+($data->prix*0.2); ?>">+/-20%</a>
+                                        </p>
                                       </div>
                                       <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                                         <div class="d-flex flex-row align-items-center mb-1">
@@ -256,7 +261,9 @@
                             </div>
                     
                         </div>
+                       
                     <?php endforeach ?>
+
                 </section>    
             </div>
         </div>
