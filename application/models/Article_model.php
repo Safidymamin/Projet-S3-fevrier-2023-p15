@@ -16,7 +16,7 @@ class Article_model extends CI_Model{
     }
     public function getAllPriorityy($idUtilisateur){
         $this->db->select('*');
-        $this->db->from('liste_article');
+        $this->db->from('(SELECT ar.idArticle,ar.idUtilisateur,ar.idCategorie,ar.titre,ar.description,ar.prix,ap.nom from Article ar join Article_Photo ap on ar.idArticle=ap.idArticle) as liste_article');
         $this->db->where('idUtilisateur',$idUtilisateur);
         $query = $this->db->get();
         return $query->result();
@@ -24,7 +24,7 @@ class Article_model extends CI_Model{
 
     public function getAllarticle($idUtilisateur){
         $this->db->select('*');
-        $this->db->from('liste_article');
+        $this->db->from('(SELECT ar.idArticle,ar.idUtilisateur,ar.idCategorie,ar.titre,ar.description,ar.prix,ap.nom from Article ar join Article_Photo ap on ar.idArticle=ap.idArticle) as liste_article');
         $this->db->where('idUtilisateur !=',$idUtilisateur);
         $query = $this->db->get();
         return $query->result();

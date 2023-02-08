@@ -19,7 +19,7 @@ class User extends CI_Controller{
     }
     public function historique(){
         $this->load->model('function_model');
-        $data['datas'] = $this->function_model->get_all_records('v_proprietaire');
+        $data['datas'] = $this->function_model->get_all_records('(SELECT pr.idUtilisateur, pr.idArticle, nom, prenom, titre, description, prix, dateTransfert FROM Proprietaire pr JOIN Utilisateur ut on pr.idUtilisateur = ut.idUtilisateur JOIN Article ar on pr.idArticle = ar.idArticle) as v_proprietaire');
         $this->load->view('head');
         $this->load->view('historique',$data);
     }

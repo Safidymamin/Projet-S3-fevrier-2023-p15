@@ -3,10 +3,13 @@ class Echange_model extends CI_Model{
 
     public function getAllDemande($idUtilisateur){
         $this->db->select('*');
-        $this->db->from('v_Demande');
+        $this->db->from('(SELECT idDemandeEchange, idArticle1, idArticle2, a1.idUtilisateur as idUtilisateur1, a2.idUtilisateur as idUtilisateur2, a1.titre, a1.description, a2.titre as monTitre, a2.description as monDescription FROM DemandeEchange de JOIN article a1 ON de.idArticle1=a1.idArticle JOIN article a2 ON de.idArticle2=a2.idArticle) as v_Demande');
         $this->db->where('idUtilisateur1',$idUtilisateur);
         $query = $this->db->get();
         return $query->result();
+        // $sql = "select * from (SELECT ar.idArticle, ar.idUtilisateur, ar.idCategorie, ar.titre, ar.description, ar.prix, ap.nom from Article ar join Article_Photo ap on ar.idArticle=ap.idArticle where idUtilisateur=$idUtilisateur) as vv";
+        // $query = $this->db->query($sql);
+        // return $query->result();
     }
     
 

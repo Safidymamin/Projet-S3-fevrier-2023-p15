@@ -77,21 +77,21 @@ CREATE TABLE Echange_history(
     dateEchange TIMESTAMP
     );
 
-CREATE VIEW v_Demande as 
-    SELECT idDemandeEchange, idArticle1, idArticle2, a1.idUtilisateur as idUtilisateur1, a2.idUtilisateur as idUtilisateur2, a1.titre, a1.description, a2.titre as monTitre, a2.description as monDescription FROM DemandeEchange de
-    JOIN article a1 ON de.idArticle1=a1.idArticle
-    JOIN article a2 ON de.idArticle2=a2.idArticle
-    ;
 
-CREATE VIEW v_proprietaire AS
-    SELECT pr.idUtilisateur, pr.idArticle, nom, prenom, titre, description, prix, dateTransfert FROM Proprietaire pr
-    JOIN Utilisateur ut on pr.idUtilisateur = ut.idUtilisateur
-    JOIN Article ar on pr.idArticle = ar.idArticle
-    ;
 
-CREATE view liste_article as 
-        SELECT ar.idArticle,ar.idUtilisateur,ar.idCategorie,ar.titre,ar.description,ar.prix,ap.nom
-         from Article ar join Article_Photo ap on ar.idArticle=ap.idArticle;  
+-- CREATE VIEW v_Demande as 
+--     SELECT idDemandeEchange, idArticle1, idArticle2, a1.idUtilisateur as idUtilisateur1, a2.idUtilisateur as idUtilisateur2, a1.titre, a1.description, a2.titre as monTitre, a2.description as monDescription FROM DemandeEchange de JOIN article a1 ON de.idArticle1=a1.idArticleJOIN article a2 ON de.idArticle2=a2.idArticle
+--     ;
+
+-- CREATE VIEW v_proprietaire AS
+--     SELECT pr.idUtilisateur, pr.idArticle, nom, prenom, titre, description, prix, dateTransfert FROM Proprietaire pr
+--     JOIN Utilisateur ut on pr.idUtilisateur = ut.idUtilisateur
+--     JOIN Article ar on pr.idArticle = ar.idArticle
+--     ;
+
+-- CREATE view liste_article as 
+        -- SELECT ar.idArticle,ar.idUtilisateur,ar.idCategorie,ar.titre,ar.description,ar.prix,ap.nom
+        --  from Article ar join Article_Photo ap on ar.idArticle=ap.idArticle;  
 
 
 
